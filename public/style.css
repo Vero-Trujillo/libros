@@ -1,0 +1,192 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(66, 62, 62);
+}
+
+h1 {
+    color: rgb(250, 92, 184);
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+/* Estilos del Home */
+.barrasBusqueda {
+    padding: 10px;
+    margin: 10px;
+}
+
+.barraTitulo {
+    position: fixed;
+    top: 25px;
+    left: 5%;
+    display: flex;
+}
+
+.barraAutor {
+    position: fixed;
+    top: 25px;
+    left: 35%;
+    display: flex;
+}
+
+.barraGenero {
+    position: fixed;
+    top: 25px;
+    left: 65%;
+    display: flex;
+}
+
+.barraTitulo input,
+.barraAutor input,
+.barraGenero input {
+    height: 30px;
+    width: 280px;
+    background-color: rgb(192, 185, 185);
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    padding-left: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.barraTitulo input::placeholder,
+.barraAutor input::placeholder,
+.barraGenero input::placeholder {
+    color: rgb(243, 235, 235);
+    font-family: serif;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.barrasBusqueda button {
+    position: fixed;
+    top: 12px;
+    left: 92%;
+    width: 80px;
+    height: 60px;
+    display: flex;
+    background-color: rgb(90, 125, 128);
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+.barrasBusqueda button a {
+    text-decoration: none;
+    justify-content: center;
+    margin-top: 5px;
+    font-size: medium;
+    color: white;
+}
+
+.contenedorListaRecomendados {
+    padding: 20px;
+}
+
+.listaRecomendados {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+}
+
+/* Estilos de Favoritos y de búsqueda */
+
+.ulFavoritos,
+.ulBusqueda {
+    width: 95%;
+    padding: 10px;
+    margin: auto;
+}
+
+.listaFavoritos,
+.listaBusqueda {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    font-size: large;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.btnDetalles,
+.btnEliminar,
+.btnAgregar {
+    width: 80px;
+    height: 35px;
+    background-color: rgb(250, 92, 184);
+    outline: none;
+    border-radius: 10px;
+    border-color: rgb(250, 92, 184);
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.linkInicio {
+    position: fixed;
+    top: 12px;
+    left: 92%;
+    width: 80px;
+    height: 60px;
+    display: flex;
+    background-color: rgb(90, 125, 128);
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+.linkInicio a {
+    text-decoration: none;
+    justify-content: center;
+    margin-top: 5px;
+    font-size: x-large;
+    color: white;
+    padding: 10px;
+}
+
+/* Estilos de los detalles de los libros */
+.detalles {
+    display: flex;
+}
+
+.texto {
+    width: 70%;
+    padding: 10px;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.texto p {
+    color: rgb(228, 207, 207);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    font-size: medium;
+    margin-bottom: 15px;
+    align-items: center;
+    margin-top: 20px;
+    line-height: 25px;
+    text-align: justify;
+}
+
+.portada {
+    margin-left: 20px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.portada img {
+    width: 200px;
+    margin-bottom: 30px;
+}
+
+.portada a {
+    border: 5px;
+    color: black;
+ margin: auto;
+}

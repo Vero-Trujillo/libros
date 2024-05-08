@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda por título</title>
+
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+
+<body>
+    <section class="buscadorTitulo">
+        <h1>Resultado de la búsqueda para el título "<%= busquedaTitulo %>"</h1>
+        <ul class="ulBusqueda">
+            <% libros.forEach(libro => { %>
+                <li class="listaBusqueda">
+                    <%= libro.volumeInfo.title %>
+                    <!-- Botón para ver detalles -->
+                    <form action="/detalles" method="GET">
+                        <input type="hidden" name="id" value="<%= libro.id %>">
+                        <button class="btnDetalles" type="submit">Ver más...</button>
+                    </form>
+                    <!-- Botón para agregar a favoritos -->
+                    <form action="/favoritos" method="POST">
+                        <input type="hidden" name="google_books_id" value="<%= libro.id %>">
+                        <input type="hidden" name="title" value="<%= libro.volumeInfo.title %>">
+                        <input type="hidden" name="authors" value="<%= libro.volumeInfo.authors %>">
+                        <input type="hidden" name="publishedDate" value="<%= libro.volumeInfo.publishedDate %>">
+                        <input type="hidden" name="categories" value="<%= libro.volumeInfo.categories %>">
+                        <button class="btnAgregar" type="submit">Agregar a favoritos</button>
+                    </form>
+                </li>
+            <% }); %>
+        </ul>
+
+            <div class="linkInicio">
+            <a href="/">Inicio</a>
+         </div>
+    </section>
+
+    
+</body>
+
+</html>

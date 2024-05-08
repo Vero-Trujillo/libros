@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros favoritos</title>
+
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+
+<body>
+    <section class="favoritos">
+        <h1>Libros favoritos:</h1>
+        <ul class="ulFavoritos">
+            <% favoritos.forEach(favorito => { %>
+                <li class="listaFavoritos">
+                    <%= favorito.title %>
+                     <!-- Botón para ver detalles -->
+                     <form action="/detalles" method="GET">
+                        <input type="hidden" name="id" value="<%= favorito.google_books_id %>">
+                        <button class="btnDetalles" type="submit">Ver más...</button>
+                    </form>
+
+                    <!-- Botón para eliminar -->
+                    <form action="/favoritos/<%= favorito.id %>?_method=DELETE" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="id" value="<%= favorito.id %>">
+                        <button class="btnEliminar" type="submit">Eliminar de favoritos</button>
+                    </form>
+                </li>
+                <% }); %>
+            </ul>
+        <div class="linkInicio">
+            <a href="/">Inicio</a>
+         </div>
+    </section>
+    
+</body>
+</html>

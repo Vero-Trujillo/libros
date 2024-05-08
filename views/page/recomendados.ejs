@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros Recomendados</title>
+
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+
+<body>
+    <section class='recomendados'>
+
+        <div class="barrasBusqueda">
+            <form class='barraTitulo' action="/buscadorTitulo" method="GET">
+                <input type="text" name="busquedaTitulo" required placeholder="🔎 buscar por título...">
+            </form>
+
+            <form class="barraAutor" action="/buscadorAutor" method="GET">
+                <input type="text" name="busquedaAutor" required placeholder="🔎 buscar por autor...">
+            </form>
+
+            <form class='barraGenero' action="/buscadorGenero" method="GET">
+                <input type="text" name="busquedaGenero" required placeholder="🔎 buscar por género...">
+            </form>
+
+            <button><a href="/favoritos">⭐ Favoritos</a></button>
+        </div>
+
+        <div class="contenedor-btnFavoritos">
+
+        </div>
+
+        <div class="contenedorListaRecomendados">
+            <h1 class="tituloRecomendados">Libros Recomendados</h1>
+            <ul>
+                <% libros.forEach(libro=> { %>
+                    <li class="listaRecomendados">
+                        <%= libro.volumeInfo.title %> (<%= libro.volumeInfo.publishedDate %>) - Autor/es: <%=
+                                    libro.volumeInfo.authors %> - <%= libro.volumeInfo.categories %>
+                    </li>
+                    <% }); %>
+            </ul>
+        </div>
+
+    </section>
+</body>
+
+</html>
